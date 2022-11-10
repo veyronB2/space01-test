@@ -25,6 +25,7 @@ const Products = () => {
 
   const handleOnClick = useCallback(() => {
     setCollapsed(!collapsed);
+
     setProductsToDisplay(getSlicedData(sortedData));
   }, [collapsed, getSlicedData, sortedData]);
 
@@ -43,7 +44,7 @@ const Products = () => {
           {productsToDisplay.map(
             ({ name, price }: { name: string; price: number }) => {
               return (
-                <div
+                <article
                   key={name}
                   className="max-w-xs rounded overflow-hidden shadow-lg bg-white  mx-auto "
                 >
@@ -51,13 +52,14 @@ const Products = () => {
                     <div className="font-bold text-xl mb-2">{name}</div>
                     <p className="text-gray-700 text-base">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Doloremque explicabo, iste amet, atque asperiores ab
-                      laborum velit ullam quos maxime id nemo odit voluptatibus
-                      corrupti quasi hic excepturi fugiat animi.
+                      Doloremque explicabo, iste amet, atque asperiores
+                      abLublin, Poland laborum velit ullam quos maxime id nemo
+                      odit voluptatibus corrupti quasi hic excepturi fugiat
+                      animi.
                     </p>
                     <div className="font-bold text-xl mb-2">£{price}</div>
                   </div>
-                </div>
+                </article>
               );
             }
           )}
